@@ -1,0 +1,86 @@
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+@prefix vann: <http://purl.org/vocab/vann/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdf: <https://www.w3.org/TR/rdf12-schema/> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
+@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix odrl: <http://www.w3.org/ns/odrl/2/> .
+@prefix profile: <http://www.w3.org/ns/dx/prof/> .
+@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
+@prefix airo: <https://w3id.org/airo#> .
+@prefix bibo: <http://purl.org/ontology/bibo/> .
+@prefix foaf: <http://xmlns.com/foaf/0.1/> .
+@prefix tech: <https://w3id.org/dpv/tech> .
+@prefix dpv: <https://w3id.org/dpv/> .
+@prefix aiup: <https://w3id.org/aiup#> .
+@prefix dcat: <https://www.w3.org/TR/vocab-dcat-3/> .
+
+@prefix : <https://w3id.org/aicat#> .
+
+#---------------------------------------------------------
+#                       metadata
+#---------------------------------------------------------
+<https://w3id.org/aicat> a owl:Ontology ;
+    dcterms:title "AI Catalogue Application Profile" ;
+    dcterms:creator "Delaram Golpayegani", "Beatriz Esteves", "Harshvardhan J. Pandit", "Dave Lewis" ;
+	vann:preferredNamespacePrefix "aicat" ;
+    vann:preferredNamespaceUri "https://w3id.org/aixcat#"^^xsd:string ;
+	owl:versionInfo "0.1"^^xsd:string ;
+	dcterms:created "2024-05-05"^^xsd:date ;
+	dcterms:description ""@en ;
+	dcterms:license <https://dalicc.net/licenselibrary/CC-BY-4.0> . 
+
+
+
+#---------------------------------------------------------
+#                       Concepts
+#---------------------------------------------------------
+:Catalog a rdfs:Class, skos:Concept ;
+           skos:prefLabel "Catalog" ;
+           rdfs:subClassOf dcat:Catalog ;
+           skos:definition " A catalogue whose contents are related to AI systems or components. "@en .
+
+:AISystem  a rdfs:Class, skos:Concept ;
+        skos:prefLabel "AI System" ;
+        skos:exactMatch airo:AISystem ;
+        rdfs:subClassOf dcat:Resource .
+
+:AIModel  a rdfs:Class, skos:Concept ;
+        skos:prefLabel "AI Model" ;
+        skos:exactMatch airo:AIModel ;
+        rdfs:subClassOf dcat:Resource .
+
+
+#---------------------------------------------------------
+#                       Properties
+#---------------------------------------------------------        
+:hasTrainingData a rdf:Property, owl:ObjectProperty ;
+                rdfs:subPropertyOf dcat:hasPart ;
+                skos:prefLabel "has training data" ;
+                skos:definition "Specifies a dataset used for training."@en .
+
+:hasTestingData a rdf:Property, owl:ObjectProperty ;
+                rdfs:subPropertyOf dcat:hasPart ;
+                skos:prefLabel "has testing data" ;
+                skos:definition "Specifies a dataset used for testing."@en .                
+
+:hasValidationData a rdf:Property, owl:ObjectProperty ;
+                rdfs:subPropertyOf dcat:hasPart ;
+                skos:prefLabel "has validation data" ;
+                skos:definition "Specifies a dataset used for validation."@en .
+
+:hasInputData a rdf:Property, owl:ObjectProperty ;
+                rdfs:subPropertyOf dcat:hasPart ;
+                skos:prefLabel "has input data" ;
+                skos:definition "Specifies input data."@en .
+
+:hasOutputData a rdf:Property, owl:ObjectProperty ;
+                rdfs:subPropertyOf dcat:hasPart ;
+                skos:prefLabel "has output data" ;
+                skos:definition "Specifies output data."@en .
+
+:hasModel a rdf:Property, owl:ObjectProperty ;
+                rdfs:subPropertyOf dcat:hasPart ;
+                skos:prefLabel "has model" ;
+                skos:definition "Specifies an AI model that used in a system."@en .         
