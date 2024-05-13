@@ -23,7 +23,7 @@
 #---------------------------------------------------------
 <https://w3id.org/aicat> a owl:Ontology ;
     dcterms:title "AI Catalogue Application Profile" ;
-    dcterms:creator "Delaram Golpayegani", "Beatriz Esteves", "Harshvardhan J. Pandit", "Dave Lewis" ;
+    dcterms:creator "Delaram Golpayegani", "Harshvardhan J. Pandit", "Dave Lewis" ;
 	vann:preferredNamespacePrefix "aicat" ;
     vann:preferredNamespaceUri "https://w3id.org/aixcat#"^^xsd:string ;
 	owl:versionInfo "0.1"^^xsd:string ;
