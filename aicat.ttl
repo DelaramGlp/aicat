@@ -29,7 +29,7 @@
 	owl:versionInfo "0.1"^^xsd:string ;
 	dcterms:created "2024-05-05"^^xsd:date ;
 	dcterms:description ""@en ;
-	dcterms:license <https://dalicc.net/licenselibrary/CC-BY-4.0> . 
+	dcterms:license <https://creativecommons.org/licenses/by/4.0/> . 
 
 
 
