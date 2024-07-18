@@ -9,7 +9,7 @@
 @prefix aiup: <https://w3id.org/aiup#> .
 @prefix dcat: <https://www.w3.org/TR/vocab-dcat-3/> .
 @prefix aicat: <https://w3id.org/aicat#>.
-@prefix ex:<http://example.com/> .
+@prefix ex: <http://example.com/> .
 
 
 <https://example.com/aicat_proctify> a aicat:Catalogue, dcat:Catalogue ;
