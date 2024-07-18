@@ -1,52 +1,46 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix vann: <http://purl.org/vocab/vann/> .
 @prefix owl: <http://www.w3.org/2002/07/owl#> .
 @prefix rdf: <https://www.w3.org/TR/rdf12-schema/> .
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
-@prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix dcterms: <http://purl.org/dc/terms/> .
+@prefix dct: <http://purl.org/dc/terms/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
-@prefix profile: <http://www.w3.org/ns/dx/prof/> .
-@prefix role: <http://www.w3.org/ns/dx/prof/role/> .
 @prefix airo: <https://w3id.org/airo#> .
-@prefix bibo: <http://purl.org/ontology/bibo/> .
-@prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix tech: <https://w3id.org/dpv/tech> .
 @prefix dpv: <https://w3id.org/dpv/> .
 @prefix aiup: <https://w3id.org/aiup#> .
 @prefix dcat: <https://www.w3.org/TR/vocab-dcat-3/> .
-@prefix ex:<https://example.com/> .
+@prefix aicat: <https://w3id.org/aicat#>.
+@prefix ex:<http://example.com/> .
 
 
-<https://example.com/aicat-proctify> a aicat:Catalogue, dcat:Catalogue ;
+<https://example.com/aicat_proctify> a aicat:Catalogue, dcat:Catalogue ;
     dct:identifier "aiedux-cat01"^^xsd:string ;
     dct:title "AIEduX catalogue"@en ;
     dct:description "AI systems and models provided by AIEduX"@en ;
     dct:created "2024-05-05"^^xsd:date ;
-    dcat:dataset :susbehaveddataset ; 
-    dcat:resource :susbehavedmodel, :proctify . 
+    dcat:dataset ex:susbehaved_dataset ; 
+    dcat:resource ex:susbehaved_model, ex:proctify, ex:susbehaved_dataset . 
 
-:susbehaveddataset a dcat:Dataset ;
+ex:susbehaved_dataset a dcat:Dataset ;
    dct:identifier "aiedux-d012"^^xsd:string ;
    dct:title "SusBehavedDataSet"@en ;
    dct:description ".. includes suspicious behaviour data.."@en .
 
-:susbehavedmodel a dcat:Resource, airo:AIModel ;
+ex:susbehaved_model a dcat:Resource, airo:AIModel ;
     dct:identifier "aiedux-m022"^^xsd:string ;
     dct:title "SusBehavedModel"@en ;
     dct:description ".. determines suspicious behaviour .."@en ;
     dct:issued "2024-02-15"^^xsd:date ; 
     dct:license <http://example.org/aieduX-m022/licence>  ;
-    aicat:hasTrainingData :susbehaveddataset .
+    aicat:hasTrainingData ex:susbehaved_dataset .
     
-:proctify a dcat:Resource, airo:AISystem ;
-    dct:publisher :aiedux ;
-    dct:Iidentifier "aiedux-ai031"^^xsd:string ; 
+ex:proctify a dcat:Resource, airo:AISystem ;
+    dct:publisher ex:aiedux ;
+    dct:identifier "aiedux-ai031"^^xsd:string ; 
     dct:title "Proctify"@en ;
     dct:description "An AI-based proctoring system..."@en ;
-    odrl:hasPolicy ex:proctify-offer ;
-    dpv:hasStatus :InService ;
-    dpv:hasCountry :Italy ;
+    odrl:hasPolicy ex:proctify_offer ;
+    dpv:hasStatus ex:InService ;
+    dpv:hasCountry ex:Italy ;
     dcat:contactPoint <http://example.org/aieduX-AI031/contact> ; 
-    aicat:hasModel :susbehavedmodel ;
-    dct:hasPart <http://example.org/facial-analysis-toolkit> .
+    aicat:hasModel ex:susbehaved_model ;
+    odrl:hasPolicy ex:proctify_use_policy.
