@@ -41,7 +41,7 @@
     
 :proctify a dcat:Resource, airo:AISystem ;
     dct:publisher :aiedux ;
-    dct:Identifier "aiedux-ai031"^^xsd:string ; 
+    dct:Iidentifier "aiedux-ai031"^^xsd:string ; 
     dct:title "Proctify"@en ;
     dct:description "An AI-based proctoring system..."@en ;
     odrl:hasPolicy ex:proctify-offer ;
