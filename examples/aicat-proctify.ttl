@@ -24,12 +24,12 @@
     dct:description "AI systems and models provided by AIEduX"@en ;
     dct:created "2024-05-05"^^xsd:date ;
     dcat:dataset :susbehaveddataset ; 
-    dcat:resource :susbehavedmodel, :proctify ; 
+    dcat:resource :susbehavedmodel, :proctify . 
 
 :susbehaveddataset a dcat:Dataset ;
    dct:identifier "aiedux-d012"^^xsd:string ;
    dct:title "SusBehavedDataSet"@en ;
-   dct:description ".. includes suspicious behaviour data.."@en ;
+   dct:description ".. includes suspicious behaviour data.."@en .
 
 :susbehavedmodel a dcat:Resource, airo:AIModel ;
     dct:identifier "aiedux-m022"^^xsd:string ;
@@ -37,7 +37,7 @@
     dct:description ".. determines suspicious behaviour .."@en ;
     dct:issued "2024-02-15"^^xsd:date ; 
     dct:license <http://example.org/aieduX-m022/licence>  ;
-    aicat:hasTrainingData :susbehaveddataset ;
+    aicat:hasTrainingData :susbehaveddataset .
     
 :proctify a dcat:Resource, airo:AISystem ;
     dct:publisher :aiedux ;
