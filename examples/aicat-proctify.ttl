@@ -13,18 +13,19 @@
 @prefix ex: <http://example.com/> .
 
 
-<https://example.com/aicat_proctify> a aicat:Catalogue, dcat:Catalogue ;
+<https://example.com/aiedux_cat01> a aicat:Catalogue, dcat:Catalogue ;
     dct:identifier "aiedux-cat01"^^xsd:string ;
     dct:title "AIEduX catalogue"@en ;
     dct:description "AI systems and models provided by AIEduX"@en ;
     dct:created "2024-05-05"^^xsd:date ;
     dcat:dataset ex:susbehaved_dataset ; 
-    dcat:resource ex:susbehaved_model, ex:proctify, ex:susbehaved_dataset . 
+    dcat:resource ex:susbehaved_model, ex:proctify . 
 
 ex:susbehaved_dataset a dcat:Dataset ;
    dct:identifier "aiedux-d012"^^xsd:string ;
    dct:title "SusBehavedDataSet"@en ;
-   dct:description ".. includes suspicious behaviour data.."@en .
+   dct:description ".. includes suspicious behaviour data.."@en ;
+   odrl:hasPolicy ex:susbehaved_dataset_policy  .
 
 ex:susbehaved_model a dcat:Resource, airo:AIModel ;
     dct:identifier "aiedux-m022"^^xsd:string ;
@@ -32,16 +33,16 @@ ex:susbehaved_model a dcat:Resource, airo:AIModel ;
     dct:description ".. determines suspicious behaviour .."@en ;
     dct:issued "2024-02-15"^^xsd:date ; 
     dct:license <http://example.org/aieduX-m022/licence>  ;
-    aicat:hasTrainingData ex:susbehaved_dataset .
+    aicat:hasTrainingData ex:susbehaved_dataset ;
+    odrl:hasPolicy ex:susbehavedmodel_policy . 
     
 ex:proctify a dcat:Resource, airo:AISystem ;
-    dct:publisher ex:aiedux ;
+    airo:isProvidedBy ex:aiedux ;
     dct:identifier "aiedux-ai031"^^xsd:string ; 
     dct:title "Proctify"@en ;
     dct:description "An AI-based proctoring system..."@en ;
-    odrl:hasPolicy ex:proctify_offer ;
     dpv:hasStatus vair:InService ;
     dpv:hasCountry <http://dbpedia.org/resource/Italy> ;
     dcat:contactPoint <http://example.org/aieduX-AI031/contact> ; 
     aicat:hasModel ex:susbehaved_model ;
-    odrl:hasPolicy ex:proctify_use_policy.
+    odrl:hasPolicy ex:proctify_use_policy .   
