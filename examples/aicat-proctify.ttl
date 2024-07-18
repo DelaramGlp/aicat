@@ -5,6 +5,7 @@
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix airo: <https://w3id.org/airo#> .
+@prefix vair: <https://w3id.org/vair#> .
 @prefix dpv: <https://w3id.org/dpv/> .
 @prefix aiup: <https://w3id.org/aiup#> .
 @prefix dcat: <https://www.w3.org/TR/vocab-dcat-3/> .
@@ -39,8 +40,8 @@ ex:proctify a dcat:Resource, airo:AISystem ;
     dct:title "Proctify"@en ;
     dct:description "An AI-based proctoring system..."@en ;
     odrl:hasPolicy ex:proctify_offer ;
-    dpv:hasStatus ex:InService ;
-    dpv:hasCountry ex:Italy ;
+    dpv:hasStatus vair:InService ;
+    dpv:hasCountry <http://dbpedia.org/resource/Italy> ;
     dcat:contactPoint <http://example.org/aieduX-AI031/contact> ; 
     aicat:hasModel ex:susbehaved_model ;
     odrl:hasPolicy ex:proctify_use_policy.
