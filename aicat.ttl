@@ -15,8 +15,7 @@
 @prefix dpv: <https://w3id.org/dpv/> .
 @prefix aiup: <https://w3id.org/aiup#> .
 @prefix dcat: <https://www.w3.org/TR/vocab-dcat-3/> .
-
-@prefix : <https://w3id.org/aicat#> .
+@prefix aicat: <https://w3id.org/aicat#> .
 
 #---------------------------------------------------------
 #                       metadata
@@ -25,10 +24,10 @@
     dcterms:title "AI Catalogue Application Profile" ;
     dcterms:creator "Delaram Golpayegani", "Harshvardhan J. Pandit", "Dave Lewis" ;
 	vann:preferredNamespacePrefix "aicat" ;
-    vann:preferredNamespaceUri "https://w3id.org/aixcat#"^^xsd:string ;
+    vann:preferredNamespaceUri "https://w3id.org/aicat#"^^xsd:string ;
 	owl:versionInfo "0.1"^^xsd:string ;
 	dcterms:created "2024-05-05"^^xsd:date ;
-	dcterms:description ""@en ;
+	dcterms:description "AI catalogue "@en ;
 	dcterms:license <https://creativecommons.org/licenses/by/4.0/> . 
 
 
@@ -36,51 +35,19 @@
 #---------------------------------------------------------
 #                       Concepts
 #---------------------------------------------------------
-:Catalog a rdfs:Class, skos:Concept ;
+aicat:Catalog a rdfs:Class, skos:Concept ;
            skos:prefLabel "Catalog" ;
            rdfs:subClassOf dcat:Catalog ;
            skos:definition " A catalogue whose contents are related to AI systems or components. "@en .
 
-:AISystem  a rdfs:Class, skos:Concept ;
+aicat:AISystem  a rdfs:Class, skos:Concept ;
         skos:prefLabel "AI System" ;
         skos:exactMatch airo:AISystem ;
         rdfs:subClassOf dcat:Resource .
 
-:AIModel  a rdfs:Class, skos:Concept ;
+aicat:AIModel  a rdfs:Class, skos:Concept ;
         skos:prefLabel "AI Model" ;
         skos:exactMatch airo:AIModel ;
         rdfs:subClassOf dcat:Resource .
 
-
-#---------------------------------------------------------
-#                       Properties
-#---------------------------------------------------------        
-:hasTrainingData a rdf:Property, owl:ObjectProperty ;
-                rdfs:subPropertyOf dcat:hasPart ;
-                skos:prefLabel "has training data" ;
-                skos:definition "Specifies a dataset used for training."@en .
-
-:hasTestingData a rdf:Property, owl:ObjectProperty ;
-                rdfs:subPropertyOf dcat:hasPart ;
-                skos:prefLabel "has testing data" ;
-                skos:definition "Specifies a dataset used for testing."@en .                
-
-:hasValidationData a rdf:Property, owl:ObjectProperty ;
-                rdfs:subPropertyOf dcat:hasPart ;
-                skos:prefLabel "has validation data" ;
-                skos:definition "Specifies a dataset used for validation."@en .
-
-:hasInputData a rdf:Property, owl:ObjectProperty ;
-                rdfs:subPropertyOf dcat:hasPart ;
-                skos:prefLabel "has input data" ;
-                skos:definition "Specifies input data."@en .
-
-:hasOutputData a rdf:Property, owl:ObjectProperty ;
-                rdfs:subPropertyOf dcat:hasPart ;
-                skos:prefLabel "has output data" ;
-                skos:definition "Specifies output data."@en .
-
-:hasModel a rdf:Property, owl:ObjectProperty ;
-                rdfs:subPropertyOf dcat:hasPart ;
-                skos:prefLabel "has model" ;
-                skos:definition "Specifies an AI model that used in a system."@en .         
+     
