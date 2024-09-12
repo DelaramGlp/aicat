@@ -15,7 +15,7 @@
 #---------------------------------------------------------
 #                       metadata
 #---------------------------------------------------------
-<https://w3id.org/aicat#> rdfs:member <https://w3id.org/aicat#AISystemShape> ;
+<https://w3id.org/aicat#> rdfs:member <https://w3id.org/aicat#AISystemShape> .
 
 
 
