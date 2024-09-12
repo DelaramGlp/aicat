@@ -11,8 +11,6 @@
 @prefix airo: <https://w3id.org/airo#> .
 @prefix bibo: <http://purl.org/ontology/bibo/> .
 @prefix foaf: <http://xmlns.com/foaf/0.1/> .
-@prefix tech: <https://w3id.org/dpv/tech> .
-@prefix dpv: <https://w3id.org/dpv/> .
 @prefix aiup: <https://w3id.org/aiup#> .
 @prefix dcat: <https://www.w3.org/TR/vocab-dcat-3/> .
 @prefix aicat: <https://w3id.org/aicat#> .
@@ -40,14 +38,14 @@ aicat:Catalog a rdfs:Class, skos:Concept ;
            rdfs:subClassOf dcat:Catalog ;
            skos:definition " A catalogue whose contents are related to AI systems or components. "@en .
 
-aicat:AISystem  a rdfs:Class, skos:Concept ;
-        skos:prefLabel "AI System" ;
-        skos:exactMatch airo:AISystem ;
-        rdfs:subClassOf dcat:Resource .
+airo:AISystem  rdfs:subClassOf dcat:Resource .
 
-aicat:AIModel  a rdfs:Class, skos:Concept ;
-        skos:prefLabel "AI Model" ;
-        skos:exactMatch airo:AIModel ;
-        rdfs:subClassOf dcat:Resource .
+airo:AIModel rdfs:subClassOf dcat:Resource .
+
+airo:Data  rdfs:subClassOf dcat:Resource .  
+
+airo:AIProvider rdfs:subClassOf foaf:Agnet .
+
+airo:AIDeployer rdfs:subClassOf foaf:Agnet .
 
      
