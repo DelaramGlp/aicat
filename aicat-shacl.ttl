@@ -27,7 +27,6 @@
                                        sh:property [
                                          a sh:PropertyShape ;
                                          sh:path airo:isProvidedBy;
-                                         sh:class airo:AIProvider ;
                                          sh:minCount 1 ] .
 
                                        
