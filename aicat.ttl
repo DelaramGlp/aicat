@@ -17,7 +17,7 @@
 @prefix dcterms: <http://purl.org/dc/terms/> .
 @prefix profile: <http://www.w3.org/ns/dx/prof/> .
 @prefix dpv: <https://w3id.org/dpv#> .
-@base  <https://w3id.org/aicat#> .
+@prefix : <https://w3id.org/aicat#> .
 
 
 <https://w3id.org/aicat> dcterms:created "2024-05-05"^^xsd:date ;
@@ -38,6 +38,7 @@
     skos:scopeNote "AI Catalogue terms "@en ;
     skos:member aicat:system ;
     skos:member aicat:model ;
+    skos:member aicat:Catalog ;
     skos:member dcat:datset ;
     skos:member airo:isProvidedBy ;
     skos:member airo:isDeployedBy ;
@@ -64,222 +65,32 @@
     skos:member dcterms:isReferencedBy ;
     skos:member dcterms:issued . 
 
-#################################################################
-#    Annotation properties
-#################################################################
-
-###  http://purl.org/dc/terms/created
-dcterms:created rdf:type owl:AnnotationProperty  .
-
-
-###  http://purl.org/dc/terms/creator
-dcterms:creator rdf:type owl:AnnotationProperty  .
-
-
-###  http://purl.org/dc/terms/description
-dcterms:description rdf:type owl:AnnotationProperty  .
-
-
-###  http://purl.org/vocab/vann/preferredNamespacePrefix
-vann:preferredNamespacePrefix rdf:type owl:AnnotationProperty  .
-
-
-###  http://purl.org/vocab/vann/preferredNamespaceUri
-vann:preferredNamespaceUri rdf:type owl:AnnotationProperty  .
-
-
-###  http://www.w3.org/2004/02/skos/core#definition
-skos:definition rdf:type owl:AnnotationProperty  .
-
-
-###  http://www.w3.org/2004/02/skos/core#prefLabel
-skos:prefLabel rdf:type owl:AnnotationProperty .
-
-
-
-###  https://www.w3.org/TR/vocab-dcat-3/resource
-dcat:resource rdf:type  owl:ObjectProperty .
-
-
-#################################################################
-#    Datatypes
-#################################################################
-
-###  http://www.w3.org/2001/XMLSchema#date
-xsd:date rdf:type rdfs:Datatype .
-
-
-#################################################################
-#    Object Properties
-#################################################################
-
-###  http://www.w3.org/ns/odrl/2/hasPolicy
-odrl:hasPolicy rdf:type owl:ObjectProperty  .
-
 
 ###  https://w3id.org/aicat#model
-aicat:model rdf:type owl:ObjectProperty ;
-            rdfs:subPropertyOf <https://www.w3.org/ns/dcat#resource> ;
+aicat:model a owl:ObjectProperty ;
+            rdfs:subPropertyOf dcat:resource ;
+            rdfs:comment "An AI model that is listed in the catalog."@en ;
+            rdfs:label "model"@en ;
+            skos:prefLabel "model"@en ;
+            skos:definition "An AI model that is listed in the catalog."@en ;
             rdfs:domain aicat:Catalog ;
             rdfs:range airo:AIModel .
 
 
 ###  https://w3id.org/aicat#system
-aicat:system rdf:type owl:ObjectProperty ;
-             rdfs:subPropertyOf <https://www.w3.org/ns/dcat#resource> ;
+aicat:system a owl:ObjectProperty ;
+             rdfs:subPropertyOf dcat:resource ;
              rdfs:domain aicat:Catalog ;
-             rdfs:range airo:AISystem .
-
-
-###  https://w3id.org/airo#hasInput
-airo:hasInput rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/airo#hasLicense
-airo:hasLicense rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/airo#hasOutput
-airo:hasOutput rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/airo#hasTestingData
-airo:hasTestingData rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/airo#hasTrainingData
-airo:hasTrainingData rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/airo#hasValidationData
-airo:hasValidationData rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/airo#isDeployedBy
-airo:isDeployedBy rdf:type owl:ObjectProperty ;
-                  rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/airo#isProvidedBy
-airo:isProvidedBy rdf:type owl:ObjectProperty ;
-                  rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/dpv#hasCountry
-<https://w3id.org/dpv#hasCountry> rdf:type owl:ObjectProperty .
-
-
-###  https://w3id.org/dpv/tech#hasMarketAvailabilityStatus
-<https://w3id.org/dpv/tech#hasMarketAvailabilityStatus> rdf:type owl:ObjectProperty .
-
-
-###  https://www.w3.org/ns/dcat#dataset
-<https://www.w3.org/ns/dcat#dataset> rdf:type owl:ObjectProperty ;
-                                     rdfs:subPropertyOf <https://www.w3.org/ns/dcat#resource> .
-
-
-###  https://www.w3.org/ns/dcat#resource
-<https://www.w3.org/ns/dcat#resource> rdf:type owl:ObjectProperty .
-
-
-#################################################################
-#    Data properties
-#################################################################
-
-###  http://purl.org/dc/terms/isReferencedBy
-dcterms:isReferencedBy rdf:type owl:DatatypeProperty .
-
-
-###  http://purl.org/dc/terms/license
-dcterms:license rdf:type owl:DatatypeProperty .
-
-
-###  http://purl.org/dc/terms/title
-dcterms:title rdf:type owl:DatatypeProperty .
-
-
-#################################################################
-#    Classes
-#################################################################
-
-###  http://xmlns.com/foaf/0.1/Agnet
-foaf:Agnet rdf:type owl:Class .
-
+             rdfs:label "system"@en ;
+             rdfs:comment "An AI system that is listed in the catalog."@en ;
+             skos:prefLabel "system"@en ;
+             skos:definition "An AI system that is listed in the catalog."@en ;
+             rdfs:range airo:AISystem .   
 
 ###  https://w3id.org/aicat#Catalog
-aicat:Catalog rdf:type owl:Class ;
+aicat:Catalog a owl:Class, rdfs:Class ;
               rdfs:subClassOf dcat:Catalog ;
-              skos:definition " A catalogue whose contents are related to AI systems or components. "@en ;
-              skos:prefLabel "Catalog" ;
-              rdf:type owl:Class .
-
-
-###  https://w3id.org/airo#AIDeployer
-airo:AIDeployer rdf:type owl:Class ;
-                rdfs:subClassOf foaf:Agnet ;
-                rdf:type owl:Class .
-
-
-###  https://w3id.org/airo#AIModel
-airo:AIModel rdf:type owl:Class ;
-             rdfs:subClassOf dcat:Resource ;
-             rdf:type owl:Class .
-
-
-###  https://w3id.org/airo#AIProvider
-airo:AIProvider a rdfs:Class, owl:Class, skos:Concept  ;
-                rdfs:subClassOf foaf:Agnet .
-
-
-###  https://w3id.org/airo#AISystem
-airo:AISystem a rdfs:Class, owl:Class, skos:Concept  ;
-              rdfs:subClassOf dcat:Resource  .
-
-
-###  https://w3id.org/airo#Data
-airo:Data a rdfs:Class, owl:Class, skos:Concept  ;
-          rdfs:subClassOf dcat:Resource .
-
-
-###  https://w3id.org/airo#License
-airo:License  a rdfs:Class, owl:Class, skos:Concept  .
-
-
-###  https://w3id.org/aiup#UsePolicy
-aiup:UsePolicy a rdfs:Class, owl:Class, skos:Concept  .
-
-
-###  https://www.w3.org/TR/vocab-dcat-3/Catalog
-dcat:Catalog a rdfs:Class, owl:Class, skos:Concept  .
-
-
-###  https://www.w3.org/TR/vocab-dcat-3/Resource
-dcat:Resource a rdfs:Class, owl:Class, skos:Concept  .
-
-
-dcterms:license rdf:type owl:AnnotationProperty .
-
-
-dcterms:title rdf:type owl:AnnotationProperty .
-
-
-
-foaf:Agent rdf:type rdfs:class, owl:Class .
-
-
-tech:hasMarketAvailabilityStatus rdf:type owl:ObjectProperty .
-
-
-
-
-aicat:model rdfs:comment " An AI model that is listed in the catalog."@en ;
-            rdfs:label "model" ;
-            rdf:type owl:ObjectProperty .
-
-
-aicat:system rdfs:comment " An AI system that is listed in the catalog."@en ;
-             rdfs:label "system" ;
-             rdf:type owl:ObjectProperty .
-
-
-###  Generated by the OWL API (version 4.5.29.2024-05-13T12:11:03Z) https://github.com/owlcs/owlapi
+              rdfs:comment "A catalogue whose contents are related to AI systems or components."@en ;
+              rdfs:label "Catalog"@en ;
+              skos:definition " A catalogue whose contents are related to AI systems or components."@en ;
+              skos:prefLabel "Catalog"@en  .              
