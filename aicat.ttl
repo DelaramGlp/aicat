@@ -20,17 +20,39 @@
 @prefix : <https://w3id.org/aicat#> .
 
 
-<https://w3id.org/aicat> dcterms:created "2024-05-05"^^xsd:date ;
-                         dcterms:creator "Dave Lewis" ,
-                                         "Delaram Golpayegani" ,
-                                         "Harshvardhan J. Pandit" ;
-                         dcterms:description "AI catalogue "@en ;
-                         dcterms:license <https://creativecommons.org/licenses/by/4.0/> ;
-                         dcterms:title "AI Catalogue Application Profile" ;
-                         vann:preferredNamespacePrefix "aicat" ;
-                         vann:preferredNamespaceUri "https://w3id.org/aicat#" ;
-                         owl:versionInfo "0.1" ;
-                         rdf:type owl:Ontology .
+<https://w3id.org/aicat> a owl:Ontology, profile:Profile ;
+   profile:isProfileOf dcat: ;
+    profile:hasResource aiup:aicat-html, aiup:aicar-ttl ; 
+    dcterms:title "AI Catalogue Application Profile" ;
+    dcterms:creator "Delaram Golpayegani", "Harshvardhan J. Pandit", "Dave Lewis" ;
+	vann:preferredNamespacePrefix "aicat" ;
+    vann:preferredNamespaceUri "https://w3id.org/aicatt#"^^xsd:string ;
+	owl:versionInfo "0.1"^^xsd:string ;
+	
+	dcterms:created "2024-05-05"^^xsd:date ;
+	dcterms:modified "2024-09-13"^^xsd:date ;
+	dcterms:description "An extension of DCAT for providng catalogues of AI systems and their components"@en ;
+	dcterms:bibliographicCitation "Cite this vocabulary as: Golpayegani, D., Pandit, H. J., & Lewis, D. (2024). AI Catalogue Application Profile (AICat). https://w3id.org/aicat#"@en ;
+	dcterms:source <http://data.europa.eu/eli/reg/2024/1689/oj> ; 
+	dcterms:license <https://dalicc.net/licenselibrary/CC-BY-4.0> . 
+
+aicat:aicat-html a profile:ResourceDescriptor ;
+    profile:hasRole role:specification ;
+    profile:hasArtifact <https://raw.githubusercontent.com/DelaramGlp/aicat/main/index.html> ;
+    dcterms:title "AICat for cataloguing AI HTML specification"@en ;
+    dcterms:format <https://www.iana.org/assignments/media-types/text/html> ;
+    dcterms:conformsTo <https://www.w3.org/TR/html/> .
+
+aicat:aicat-ttl a profile:ResourceDescriptor ;
+    profile:hasRole role:vocabulary ;
+    profile:hasArtifact <https://raw.githubusercontent.com/DelaramGlp/aicat/main/aicat.ttl> ;
+    dcterms:title "AICat for cataloguing AI Turtle vocabulary"@en ;
+    dcterms:format <https://www.iana.org/assignments/media-types/text/turtle> ;
+    dcterms:conformsTo <https://www.w3.org/TR/turtle/> .
+
+
+
+        
 
 <https://w3id.org/aicat#>
     a skos:Collection ;
