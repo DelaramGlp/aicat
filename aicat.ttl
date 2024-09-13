@@ -115,4 +115,11 @@ aicat:Catalog a owl:Class, rdfs:Class ;
               rdfs:comment "A catalogue whose contents are related to AI systems or components."@en ;
               rdfs:label "Catalog"@en ;
               skos:definition " A catalogue whose contents are related to AI systems or components."@en ;
-              skos:prefLabel "Catalog"@en  .              
+              skos:prefLabel "Catalog"@en  .  
+
+airo:AIProvider   a owl:Class, rdfs:Class ;
+                rdfs:subClassOf foaf:Agent .
+
+airo:AIDeployer   a owl:Class, rdfs:Class ;
+                rdfs:subClassOf foaf:Agent .
+
