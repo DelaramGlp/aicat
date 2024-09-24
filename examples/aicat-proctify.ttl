@@ -12,7 +12,7 @@
 @prefix ex: <http://example.com/> .
 
 
-<https://example.com/aiedux_cat01> a aicat:Catalogue, dcat:Catalog  ;
+<https://example.com/aiedux_cat01> a aicat:Catalog , dcat:Catalog  ;
     dct:identifier "aiedux-cat01"^^xsd:string ;
     dct:title "AIEduX catalogue"@en ;
     dct:description "AI systems and models provided by AIEduX"@en ;
