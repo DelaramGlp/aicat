@@ -1,5 +1,6 @@
 @prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
-@prefix rdf: <https://www.w3.org/TR/rdf12-schema/> .
+@prefix rdfs: <https://www.w3.org/TR/rdf12-schema/> .
+@prefix rdf: <http://www.w3.org/1999/02/22-rdf-syntax-ns> .
 @prefix dct: <http://purl.org/dc/terms/> .
 @prefix odrl: <http://www.w3.org/ns/odrl/2/> .
 @prefix airo: <https://w3id.org/airo#> .
