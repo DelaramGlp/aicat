@@ -11,7 +11,7 @@
 @prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
 @prefix role: <http://www.w3.org/ns/dx/prof/role/> .
 @prefix skos: <http://www.w3.org/2004/02/skos/core#> .
-@prefix tech: <https://w3c.github.io/dpv/2.0/tech#> .
+@prefix tech: <https://w3id.org/dpv/tech#> .
 @prefix vann: <http://purl.org/vocab/vann/> .
 @prefix aicat: <https://w3id.org/aicat#> .
 @prefix dcterms: <http://purl.org/dc/terms/> .
@@ -26,7 +26,7 @@
     dcterms:title "AI Catalogue Application Profile" ;
     dcterms:creator "Delaram Golpayegani", "Harshvardhan J. Pandit", "Dave Lewis" ;
 	vann:preferredNamespacePrefix "aicat" ;
-    vann:preferredNamespaceUri "https://w3id.org/aicatt#"^^xsd:string ;
+    vann:preferredNamespaceUri "https://w3id.org/aicat#"^^xsd:string ;
 	owl:versionInfo "0.1"^^xsd:string ;
 	
 	dcterms:created "2024-05-05"^^xsd:date ;
